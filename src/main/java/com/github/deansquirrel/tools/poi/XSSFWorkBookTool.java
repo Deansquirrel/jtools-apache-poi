@@ -3,6 +3,7 @@ package com.github.deansquirrel.tools.poi;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.*;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -69,4 +70,13 @@ public class XSSFWorkBookTool {
         return book;
     }
 
+    public static <T> XSSFWorkTable getXSSFWorkTable(String name, List<T> list, IDataMapper<T> iDataMapper) {
+        List<List<Object>> rows = new ArrayList<>();
+        for(T data : list) {
+            rows.add(iDataMapper.getRowData(data));
+        }
+        return XSSFWorkTable.builder(name)
+                .initTitle(iDataMapper.getTitleList())
+                .initRows(rows);
+    }
 }
