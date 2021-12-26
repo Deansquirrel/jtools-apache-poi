@@ -39,6 +39,7 @@ public class XSSFWorkBookTool {
                 ret = 1;
                 Row titleRow = sheet.createRow(0);
                 for(int i = 0; i < title.size(); i++) {
+                    if(title.get(i) == null) continue;
                     Cell cell = titleRow.createCell(i);
                     RichTextString richTextString = new XSSFRichTextString(title.get(i));
                     richTextString.applyFont(font);
@@ -50,8 +51,10 @@ public class XSSFWorkBookTool {
                 for(int i = 0; i < table.getRows().size(); i++) {
                     Row dataRow = sheet.createRow(i + ret);
                     List<Object> rowData = table.getRows().get(i);
+                    if(rowData == null) continue;
                     for(int j = 0; j < rowData.size(); j++) {
                         Object cellData = rowData.get(j);
+                        if(cellData == null) continue;
                         Cell cell = dataRow.createCell(j);
                         if(cellData instanceof Date) {
                             cell.setCellValue((Date)cellData);
