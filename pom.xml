@@ -5,8 +5,20 @@
   <groupId>com.github.deansquirrel</groupId>
   <artifactId>tools-apache-poi</artifactId>
 <!--   <version>0.0.0</version>-->
-  <version>0.0.3</version>
-  <name>tools-apache-poi</name>
+  <version>0.0.4</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <name>tools-apache-poi</name>
   <url>https://github.com/Deansquirrel/jtools-apache-poi</url>
   <description>tools apache-poi</description>
 

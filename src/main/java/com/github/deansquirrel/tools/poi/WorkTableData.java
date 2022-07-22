@@ -5,26 +5,26 @@ import java.util.List;
 /**
  * Excel表格数据
  */
-public class XSSFWorkTable {
+public class WorkTableData {
 
-    private XSSFWorkTable(){};
+    private WorkTableData(){};
 
-    private XSSFWorkTable(String name) {
+    private WorkTableData(String name) {
         this.name = name;
     }
 
-    private XSSFWorkTable(String name, List<String> title, List<List<Object>> rows) {
+    private WorkTableData(String name, List<String> title, List<List<Object>> rows) {
         this.name = name;
         this.title = title;
         this.rows = rows;
     }
 
-    public static XSSFWorkTable builder(String name) {
-        return new XSSFWorkTable(name);
+    public static WorkTableData builder(String name) {
+        return new WorkTableData(name);
     }
 
-    public static XSSFWorkTable builder(String name, List<String> title, List<List<Object>> rows) {
-        return new XSSFWorkTable(name, title, rows);
+    public static WorkTableData builder(String name, List<String> title, List<List<Object>> rows) {
+        return new WorkTableData(name, title, rows);
     }
 
     private String name;
@@ -47,7 +47,7 @@ public class XSSFWorkTable {
         this.title = title;
     }
 
-    public XSSFWorkTable initTitle(List<String> title) {
+    public WorkTableData initTitle(List<String> title) {
         this.title = title;
         return this;
     }
@@ -60,7 +60,7 @@ public class XSSFWorkTable {
         this.rows = rows;
     }
 
-    public XSSFWorkTable initRows(List<List<Object>> rows) {
+    public WorkTableData initRows(List<List<Object>> rows) {
         this.rows = rows;
         return this;
     }
