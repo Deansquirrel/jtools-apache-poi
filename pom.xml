@@ -5,12 +5,12 @@
   <parent>
     <groupId>com.github.deansquirrel</groupId>
     <artifactId>tools-parent</artifactId>
-    <version>0.0.2</version>
+    <version>1.0.1</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
   <artifactId>tools-apache-poi</artifactId>
-<!--   <version>0.0.0</version>-->
-  <version>0.1.0</version>
+<!--  <version>0.0.0</version>-->
+  <version>1.0.0</version>
   <name>tools-apache-poi</name>
 
   <url>https://github.com/Deansquirrel/jtools-apache-poi</url>
@@ -75,17 +75,6 @@
               <autoReleaseAfterClose>true</autoReleaseAfterClose>
             </configuration>
           </plugin>
-<!--          <plugin>-->
-<!--            <groupId>org.sonatype.plugins</groupId>-->
-<!--            <artifactId>nexus-staging-maven-plugin</artifactId>-->
-<!--            <version>1.6.7</version>-->
-<!--            <extensions>true</extensions>-->
-<!--            <configuration>-->
-<!--              <serverId>ossrh</serverId>-->
-<!--              <nexusUrl>https://oss.sonatype.org/</nexusUrl>-->
-<!--              <autoReleaseAfterClose>true</autoReleaseAfterClose>-->
-<!--            </configuration>-->
-<!--          </plugin>-->
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-gpg-plugin</artifactId>
@@ -125,6 +114,12 @@
                 </goals>
               </execution>
             </executions>
+            <configuration>
+              <additionalJOptions>-Xdoclint:none -J-Dfile.encoding=utf-8</additionalJOptions>
+              <charset>UTF-8</charset>
+              <encoding>UTF-8</encoding>
+              <docencoding>UTF-8</docencoding>
+            </configuration>
           </plugin>
         </plugins>
       </build>
